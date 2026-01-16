@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Adlife Luxury | Srinagar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      :root {
+        --primary-color: #fefeff;
+        --secondary-color: #c67d0faf;
+        --light-color: #f8f9fa;
+        --dark-color: #2d3748;
+        --text-color: #333;
+        --text-light: #666;
+        --border-color: #e2e8f0;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #f5f7fa;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: var(--primary-color);
+        color: #000;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo i {
+        color: #000;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      .nav-links a {
+        color: #000;
+
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--secondary-color);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section with Background Image */
+      .hero {
+        background: linear-gradient(
+            rgba(26, 54, 93, 0.7),
+            rgba(26, 54, 93, 0.85)
+          ),
+          url("https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        animation: fadeIn 1.5s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        opacity: 0.95;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .rating-badge {
+        background-color: var(--secondary-color);
+        color: #000;
+
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+      }
+
+      .rating-badge i {
+        font-size: 1.2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: #000;
+
+        padding: 15px 35px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+      }
+
+      .cta-button:hover {
+        background-color: transparent;
+        color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Main Content */
+      section {
+        padding: 80px 0;
+      }
+
+      section:nth-child(even) {
+        background-color: white;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        color: #000;
+
+        font-size: 2.4rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 5px;
+        background-color: var(--secondary-color);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Reviews Section */
+      .review-summary {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+
+      .overall-rating {
+        text-align: center;
+      }
+
+      .rating-number {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #000;
+
+        line-height: 1;
+      }
+
+      .rating-stars {
+        color: var(--secondary-color);
+        font-size: 1.8rem;
+        margin: 15px 0;
+      }
+
+      .rating-count {
+        color: var(--text-light);
+        font-size: 1.1rem;
+      }
+
+      .rating-bars {
+        flex: 1;
+        max-width: 450px;
+      }
+
+      .rating-bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .rating-label {
+        width: 90px;
+        font-weight: 500;
+      }
+
+      .bar-container {
+        flex: 1;
+        height: 12px;
+        background-color: var(--border-color);
+        border-radius: 6px;
+        overflow: hidden;
+        margin: 0 20px;
+      }
+
+      .bar {
+        height: 100%;
+        background-color: var(--secondary-color);
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .review-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-top: 4px solid var(--secondary-color);
+      }
+
+      .review-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        align-items: center;
+      }
+
+      .reviewer {
+        font-weight: 700;
+        color: #000;
+
+        font-size: 1.1rem;
+      }
+
+      .review-date {
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .review-rating {
+        color: var(--secondary-color);
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+
+      .review-text {
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      /* Image Gallery Section */
+      .gallery-section {
+        background-color: #f8f9fa;
+      }
+
+      .gallery-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-item {
+        border-radius: 10px;
+        overflow: hidden;
+        height: 250px;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        display: flex;
+        align-items: flex-end;
+        padding: 20px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .gallery-item:hover .image-overlay {
+        opacity: 1;
+      }
+
+      .image-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      /* Amenities Section */
+      .amenities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .amenity-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-left: 5px solid var(--secondary-color);
+      }
+
+      .amenity-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .amenity-icon {
+        font-size: 3rem;
+        color: #000;
+
+        margin-bottom: 20px;
+      }
+
+      .amenity-card h3 {
+        margin-bottom: 15px;
+        color: #000;
+
+        font-size: 1.4rem;
+      }
+
+      /* Hotel Info */
+      .hotel-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 50px;
+        align-items: start;
+      }
+
+      .info-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 35px;
+        box-shadow: var(--shadow);
+        border-top: 5px solid var(--secondary-color);
+      }
+
+      .info-card h3 {
+        color: #000;
+
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--border-color);
+        font-size: 1.6rem;
+      }
+
+      .info-list {
+        list-style: none;
+      }
+
+      .info-list li {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .info-list li:last-child {
+        border-bottom: none;
+      }
+
+      .info-label {
+        font-weight: 600;
+        color: #000;
+      }
+
+      .highlight-staff {
+        background-color: #fff8e1;
+        border-left: 5px solid var(--secondary-color);
+        padding: 20px;
+        margin-top: 25px;
+        border-radius: 0 5px 5px 0;
+      }
+
+      /* WhatsApp Floating Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #128c7e;
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .whatsapp-float span {
+        display: none;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 60px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+        margin-bottom: 50px;
+      }
+
+      .footer-section h3 {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+        color: var(--secondary-color);
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: #ccc;
+        margin-bottom: 12px;
+        display: block;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: var(--secondary-color);
+        padding-left: 5px;
+      }
+
+      .footer-section i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #aaa;
+        font-size: 0.95rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1200px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2.4rem;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .hero {
+          padding: 80px 0;
+          min-height: 70vh;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: var(--primary-color);
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 0;
+          gap: 0;
+          transform: translateY(-100%);
+          opacity: 0;
+          transition: all 0.3s;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        .nav-links.active {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        .nav-links li {
+          width: 100%;
+          text-align: center;
+          padding: 15px 0;
+        }
+
+        .hero {
+          padding: 60px 0;
+          min-height: 60vh;
+          background-attachment: scroll;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 20px;
+          right: 20px;
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .rating-badge {
+          padding: 10px 20px;
+          font-size: 1rem;
+        }
+
+        .review-summary {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .rating-number {
+          font-size: 3.5rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .cta-button {
+          padding: 12px 25px;
+          font-size: 1.1rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        .gallery-item {
+          height: 200px;
+        }
+
+        .hotel-info {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-item {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-hotel"></i>
+            <span class="business-name">Adlife Luxury</span>
+          </div>
+
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#info">Hotel Info</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="business-name">Hotel Adlife Luxury</h1>
+          <p class="business-tagline">
+            Experience unparalleled luxury and hospitality in the heart of
+            Srinagar, Kashmir
+          </p>
+
+          <div class="rating-badge">
+            <i class="fas fa-star"></i>
+            <span>4.4/5 • 1,393 Google Reviews</span>
+          </div>
+
+          <a href="#info" class="cta-button">Book Your Stay Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="gallery-section">
+      <div class="container">
+        <h2 class="section-title">Hotel Gallery</h2>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Luxury Hotel Room"
+            />
+            <div class="image-overlay">
+              <div class="image-title">Luxury Suite</div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80"
+              alt="Hotel Dining Area"
+            />
+            <div class="image-overlay">
+              <div class="image-title">Fine Dining Restaurant</div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+              alt="Hotel Pool"
+            />
+            <div class="image-overlay">
+              <div class="image-title">Swimming Pool</div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Hotel Lobby"
+            />
+            <div class="image-overlay">
+              <div class="image-title">Grand Lobby</div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1549294413-26f195200c16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80"
+              alt="Mountain View Room"
+            />
+            <div class="image-overlay">
+              <div class="image-title">Mountain View Room</div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Hotel Bar"
+            />
+            <div class="image-overlay">
+              <div class="image-title">Lounge & Bar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+      <div class="container">
+        <h2 class="section-title">Guest Reviews</h2>
+
+        <div class="review-summary">
+          <div class="overall-rating">
+            <div class="rating-number">4.4</div>
+            <div class="rating-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="rating-count">1,393 Google Reviews</div>
+          </div>
+
+          <div class="rating-bars">
+            <div class="rating-bar">
+              <div class="rating-label">5 Star</div>
+              <div class="bar-container">
+                <div class="bar" style="width: 85%"></div>
+              </div>
+              <div class="rating-value">85%</div>
+            </div>
+            <div class="rating-bar">
+              <div class="rating-label">4 Star</div>
+              <div class="bar-container">
+                <div class="bar" style="width: 10%"></div>
+              </div>
+              <div class="rating-value">10%</div>
+            </div>
+            <div class="rating-bar">
+              <div class="rating-label">3 Star</div>
+              <div class="bar-container">
+                <div class="bar" style="width: 3%"></div>
+              </div>
+              <div class="rating-value">3%</div>
+            </div>
+            <div class="rating-bar">
+              <div class="rating-label">2 Star</div>
+              <div class="bar-container">
+                <div class="bar" style="width: 1%"></div>
+              </div>
+              <div class="rating-value">1%</div>
+            </div>
+            <div class="rating-bar">
+              <div class="rating-label">1 Star</div>
+              <div class="bar-container">
+                <div class="bar" style="width: 1%"></div>
+              </div>
+              <div class="rating-value">1%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">Nishant Bharti</div>
+              <div class="review-date">6 days ago</div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">
+              Five stars for the service alone! The entire team here is
+              professional, welcoming, and incredibly helpful. The check-in was
+              breeze-fast, the rooms were spotless, and the breakfast staff were
+              so cheerful they made our mornings.
+            </p>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">Ayesha Khan</div>
+              <div class="review-date">2 months ago</div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">
+              My family of 10 had a beautiful stay in adlife luxury. The rooms
+              are spacious, their service topnotch. Meals provided are delicious
+              and they serve a variety. They go out of their way to make u
+              comfortable.
+            </p>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">Abdullah Ansari</div>
+              <div class="review-date">4 months ago</div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">
+              I had a wonderful stay at Adlife Hotels in Kashmir. The place is
+              clean, comfortable, and well-managed. A big thanks to Mr. Sami
+              Khan (Manager) for his excellent hospitality and to Mr. Khalid for
+              being very helpful throughout my stay.
+            </p>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">Siddhaarrtha Das</div>
+              <div class="review-date">8 months ago</div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p class="review-text">
+              I had stay for one day at Adlife Luxury in Srinagar which
+              definitely lives up to its name in terms of ambiance and
+              aesthetics. The space is beautifully designed, clean, and gives
+              off a very high-end, relaxing vibe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" style="background-color: #f8f9fa">
+      <div class="container">
+        <h2 class="section-title">Hotel Amenities</h2>
+
+        <div class="amenities-grid">
+          <!-- Amenity 1 -->
+          <div class="amenity-card">
+            <div class="amenity-icon">
+              <i class="fas fa-swimming-pool"></i>
+            </div>
+            <h3>Swimming Pool</h3>
+            <p>
+              Relax and unwind in our beautifully maintained swimming pool with
+              mountain views.
+            </p>
+          </div>
+
+          <!-- Amenity 2 -->
+          <div class="amenity-card">
+            <div class="amenity-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Free Breakfast</h3>
+            <p>
+              Start your day with our delicious complimentary breakfast buffet
+              featuring local and international cuisine.
+            </p>
+          </div>
+
+          <!-- Amenity 3 -->
+          <div class="amenity-card">
+            <div class="amenity-icon">
+              <i class="fas fa-wifi"></i>
+            </div>
+            <h3>Free Wi-Fi</h3>
+            <p>
+              Stay connected with high-speed internet access throughout the
+              hotel and in all rooms.
+            </p>
+          </div>
+
+          <!-- Amenity 4 -->
+          <div class="amenity-card">
+            <div class="amenity-icon">
+              <i class="fas fa-parking"></i>
+            </div>
+            <h3>Free Parking</h3>
+            <p>
+              Convenient and secure parking available for all our guests with
+              24/7 surveillance.
+            </p>
+          </div>
+
+          <!-- Amenity 5 -->
+          <div class="amenity-card">
+            <div class="amenity-icon">
+              <i class="fas fa-concierge-bell"></i>
+            </div>
+            <h3>24/7 Concierge</h3>
+            <p>
+              Our dedicated concierge team is available round the clock to
+              assist with all your needs.
+            </p>
+          </div>
+
+          <!-- Amenity 6 -->
+          <div class="amenity-card">
+            <div class="amenity-icon">
+              <i class="fas fa-spa"></i>
+            </div>
+            <h3>Spa Services</h3>
+            <p>
+              Indulge in rejuvenating spa treatments and massage therapies after
+              a long day of sightseeing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hotel Info Section -->
+    <section id="info">
+      <div class="container">
+        <h2 class="section-title">Hotel Information</h2>
+
+        <div class="hotel-info">
+          <div class="info-card">
+            <h3>Check-in Details</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Check-in Time:</span>
+                <span>14:00 (2:00 PM)</span>
+              </li>
+              <li>
+                <span class="info-label">Check-out Time:</span>
+                <span>12:00 (12:00 PM)</span>
+              </li>
+              <li>
+                <span class="info-label">Address:</span>
+                <span class="business-address"
+                  >Bishmber Nagar, Bishember Nagar, Link, MunawarAbad, Srinagar,
+                  Jammu and Kashmir 190001</span
+                >
+              </li>
+              <li>
+                <span class="info-label">Contact:</span>
+                <span class="business-phone">090709 99300</span>
+              </li>
+              <li>
+                <span class="info-label">Tripadvisor Rating:</span>
+                <span>3.7/5 (13 reviews)</span>
+              </li>
+            </ul>
+
+            <div class="highlight-staff">
+              <p>
+                <strong>Staff Highlights:</strong> Guests frequently praise Sam,
+                Khalid, Arifa, Chef Imtiaz and Mr. Sami Khan (Manager) for
+                exceptional service and hospitality.
+              </p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Hotel Highlights</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Category:</span>
+                <span>Luxury Hotel</span>
+              </li>
+              <li>
+                <span class="info-label">Atmosphere:</span>
+                <span>Quiet & Relaxing</span>
+              </li>
+              <li>
+                <span class="info-label">Value:</span>
+                <span>Great Value for Money</span>
+              </li>
+              <li>
+                <span class="info-label">Family Friendly:</span>
+                <span>Child-friendly Environment</span>
+              </li>
+              <li>
+                <span class="info-label">Food Quality:</span>
+                <span>Tasty and Healthy Options</span>
+              </li>
+              <li>
+                <span class="info-label">Room Quality:</span>
+                <span>Spacious, Clean & Comfortable</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Hotel Adlife Luxury</h3>
+            <p>
+              Experience the perfect blend of luxury and comfort in the heart of
+              Srinagar, Kashmir. Rated 4.4/5 by 1,393 guests on Google.
+            </p>
+            <p>
+              One of the best hotels in Srinagar with dedicated staff and
+              excellent service.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p class="business-address">
+              <i class="fas fa-map-marker-alt"></i> Bishmber Nagar, Srinagar,
+              Jammu and Kashmir 190001
+            </p>
+            <p class="business-phone">
+              <i class="fas fa-phone"></i> 090709 99300
+            </p>
+            <p><i class="fas fa-envelope"></i> info@adlifeluxury.com</p>
+            <p>
+              <i class="fas fa-clock"></i> Check-in: 2:00 PM | Check-out: 12:00
+              PM
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+            <a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
+            <a href="#amenities"
+              ><i class="fas fa-swimming-pool"></i> Amenities</a
+            >
+            <a href="#info"><i class="fas fa-info-circle"></i> Hotel Info</a>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2026. All rights reserved.</p>
+          <!-- <p>Design based on Google Reviews Summary | Images from Unsplash</p> -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/919070999300?text=Hi%20Hotel%20Adlife%20Luxury,%20I%20would%20like%20to%20inquire%20about%20booking%20a%20room"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span>Contact Us</span>
+    </a>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Image gallery hover effect enhancement
+      document.querySelectorAll(".gallery-item").forEach((item) => {
+        item.addEventListener("mouseenter", function () {
+          this.style.zIndex = "10";
+        });
+
+        item.addEventListener("mouseleave", function () {
+          this.style.zIndex = "1";
+        });
+      });
+
+      // WhatsApp button hover text effect
+      const whatsappBtn = document.querySelector(".whatsapp-float");
+      whatsappBtn.addEventListener("mouseenter", function () {
+        this.style.width = "180px";
+        this.querySelector("span").style.display = "inline";
+        this.querySelector("span").style.marginLeft = "10px";
+        this.querySelector("span").style.fontSize = "1rem";
+      });
+
+      whatsappBtn.addEventListener("mouseleave", function () {
+        this.style.width = "60px";
+        this.querySelector("span").style.display = "none";
+      });
+    </script>
+    <script src="./config.js"></script>
+  </body>
+</html>
